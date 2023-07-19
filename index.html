@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Registration</h1>
+    <form action="/register" method="POST">
+      <label for="firstName">First Name:</label>
+      <input type="text" id="firstName" name="firstName" required>
+
+      <label for="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="lastName" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="mobileNo">Mobile No:</label>
+      <input type="text" id="mobileNo" name="mobileNo" required>
+
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" required></textarea>
+
+      <input type="submit" value="Register">
+    </form>
+
+    <p>Already have an account? <a href="/login">Login</a></p>
+  </div>
+
+  <div class="popup" id="popup">
+    <div class="popup-message">
+      <p>Kindly register before you try to login.</p>
+    </div>
+  </div>
+
+  <script>
+    if (window.location.pathname === '/login') {
+      const popup = document.getElementById('popup');
+      popup.style.display = 'flex';
+    }
+  </script>
+</body>
+</html>
